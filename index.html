@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Shree</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f9ff; /* Soft light blue */
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #1a2b47; /* Dark blue */
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1.5px;
+        }
+
+        header p {
+            font-size: 1.8rem;
+            margin: 10px 0 25px;
+            letter-spacing: 0.5px;
+        }
+
+        button {
+            padding: 15px 35px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 30px;
+            background: #ffd700;
+            color: #1a2b47;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            margin: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: #e6c200;
+            transform: scale(1.1);
+        }
+
+        section {
+            display: none;
+            padding: 60px 30px;
+            max-width: 800px;
+            margin: 30px auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            z-index: 1000;
+            width: 90%;
+            max-width: 700px;
+            animation: popupAnimation 1s ease-out;
+        }
+
+        @keyframes popupAnimation {
+            0% { opacity: 0; transform: translate(-50%, -40%) scale(0.9); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .popup iframe {
+            border-radius: 15px;
+            width: 100%;
+            height: 350px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .popup h3 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #1a2b47;
+        }
+
+        .popup p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a2b47;
+            color: #ffd700;
+            font-size: 1.3rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        section h2 {
+            font-size: 2.8rem; /* Increased text size for section titles */
+            margin-bottom: 20px;
+            color: #1a2b47;
+        }
+
+        section p {
+            font-size: 1.5rem; /* Increased text size for section content */
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Happy Birthday Shree!</h1>
+        <p>Wishing you a day filled with joy and beautiful moments!</p>
+        <button onclick="showSection('message')">Read Your Message</button>
+        <button onclick="showSection('moments')">Special Moments</button>
+        <button onclick="showSection('gift')">Open Your Gift</button>
+    </header>
+
+    <section id="message">
+        <h2>Message to My Special One</h2>
+        <p>Dear Shree,</p>
+        <p>Happy Birthday! Your kindness, laughter, and friendship are truly cherished. May your year ahead be filled with love and happiness!</p>
+    </section>
+
+    <section id="moments">
+        <h2>Memorable Moments</h2>
+        <p>Every moment with you is special, and today is just another reason to celebrate how wonderful you are. Cheers to more memories!</p>
+    </section>
+
+    <section id="gift">
+        <h2>Your Special Gift</h2>
+        <p>Here is a virtual gift for you, I hope you will like it!</p>
+        <button onclick="openGift()">Click to Open</button>
+    </section>
+
+    <div class="popup" id="popup">
+        <h3>Surprise Gift!</h3>
+        <p>Here's a small token of my love and appreciation for you. Enjoy your day to the fullest!</p>
+        <iframe id="giftVideo" src="" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <footer>
+        <p>With love, from India <strong>- Sneha</strong></p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(section => section.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function openGift() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('giftVideo').src = 'https://www.youtube-nocookie.com/embed/Yg-q9lmXECU?autoplay=1';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('giftVideo').src = '';
+        }
+    </script>
+</body>
+</html>
